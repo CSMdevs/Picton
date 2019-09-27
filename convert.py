@@ -5,9 +5,6 @@ from resizeimage import resizeimage
 
 
 def convert(img_dir):
-    width = 96
-    height = 96
-
     print("")
     print("Starting conversion to jpg:")
     
@@ -34,6 +31,8 @@ def convert(img_dir):
 
 
 def downscale(img_dir):
+    width = 96
+    height = 96
     for file in glob.glob(img_dir + "/*.jpg"):
         im = Image.open(file)
         im1 = im.resize((width, height), Image.ANTIALIAS)

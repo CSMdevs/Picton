@@ -11,3 +11,5 @@ download.download(keyword, count, img_dir)
 rename.rename(keyword, img_dir)
 convert.convert(img_dir)
 convert.downscale(img_dir)
+
+import dataset
