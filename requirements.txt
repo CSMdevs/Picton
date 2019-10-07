@@ -1,2 +1,4 @@
 Pillow
 google_images_download
+opencv-python
+tdqm

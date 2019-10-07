@@ -6,34 +6,40 @@ from resizeimage import resizeimage
 
 def convert(img_dir):
     print("")
-    print("Starting conversion to jpg:")
+    print("Starting conversion to jpeg:")
     
     for file in glob.glob(img_dir + "/*.png"):
         im = Image.open(file)
         rgb_im = im.convert('RGB')
-        rgb_im.save(file.replace("png", "jpg"), quality=70)
-        print("Converted " + file + " to jpg")
+        rgb_im.save(file.replace("png", "jpeg"), quality=70)
+        print("Converted " + file + " to jpeg")
         os.remove(file)
         
-    for file in glob.glob(img_dir + "/*.jpeg"):
+    for file in glob.glob(img_dir + "/*.jpg"):
         im = Image.open(file)
         rgb_im = im.convert('RGB')
-        rgb_im.save(file.replace("jpeg", "jpg"), quality=70)
-        print("Converted " + file + " to jpg")
+        rgb_im.save(file.replace("jpg", "jpeg"), quality=70)
+        print("Converted " + file + " to jpeg")
         os.remove(file)
         
     for file in glob.glob(img_dir + "/*.tiff"):
         im = Image.open(file)
         rgb_im = im.convert('RGB')
-        rgb_im.save(file.replace("tiff", "jpg"), quality=70)
-        print("Converted " + file + " to jpg")
+        rgb_im.save(file.replace("tiff", "jpeg"), quality=70)
+        print("Converted " + file + " to jpeg")
         os.remove(file)
-
+    
+    for file in glob.glob(img_dir + "/*.gif"):
+        im = Image.open(file)
+        rgb_im = im.convert('RGB')
+        rgb_im.save(file.replace("gif", "jpeg"), quality=70)
+        print("Converted " + file + " to jpeg")
+        os.remove(file)
 
 def downscale(img_dir):
     width = 96
     height = 96
-    for file in glob.glob(img_dir + "/*.jpg"):
+    for file in glob.glob(img_dir + "/*.jpeg"):
         im = Image.open(file)
         im1 = im.resize((width, height), Image.ANTIALIAS)
         im1.save(file.replace("",""), quality=70)
