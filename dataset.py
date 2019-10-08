@@ -12,10 +12,10 @@ class_list = []
 DATADIR = "downloads"
 
 # All the categories you want your neural network to detect
-CATEGORIES = ["seagull", "pigeon"]
+CATEGORIES = ["seagull", "penguin", "owl", "pigeon", "kiwi bird", "blackbird", "eagle", "mallard"]
 
 # The size of the images that your neural network will use
-IMG_SIZE = 50
+IMG_SIZE = 96
 
 # Checking or all images in the data folder
 for category in CATEGORIES :
@@ -35,6 +35,7 @@ def create_training_data():
 				new_array = cv2.resize(img_array, (IMG_SIZE, IMG_SIZE))
 				training_data.append([new_array, class_num])
 			except Exception as e:
+				print(e)
 				pass
 
 create_training_data()

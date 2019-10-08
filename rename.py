@@ -5,6 +5,6 @@ def rename(keyword, img_dir):
     counter = 1
     for filename in os.listdir(img_dir):
         ext = os.path.splitext(filename)[1]
-        os.rename(img_dir + "/" + filename, img_dir + "/" + keyword + "." + str(counter).zfill(2) + ext)
+        os.rename(img_dir + "/" + filename, img_dir + "/" + keyword + "." + str(counter).zfill(3) + ext)
         counter += 1
     print("Renamed files")

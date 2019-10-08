@@ -1,4 +1,9 @@
-Pillow
-google_images_download
+Pillow==6.2.0
+google_images_download==2.8.0
 opencv-python
-python-resize-image
+python-resize-image==1.1.19pyt
+matplotlib
+tensorflow
+keras
+bs4
+requests

@@ -6,7 +6,7 @@ import threading
 
 
 #keyword = raw_input("Enter keyword: ")
-keywords = ["seagull", "penguin", "owl", "pigeon", "kiwi bird", "mallard", "blackbird", "sparrow", "eagle"]
+keywords = ["seagull", "penguin", "owl", "pigeon", "kiwi bird", "mallard", "blackbird", "sparrow", "eagle", "mallard"]
 
 def img_actions(keyword):
     img_dir = os.path.dirname(os.path.abspath(__file__)) + "/downloads/" + keyword

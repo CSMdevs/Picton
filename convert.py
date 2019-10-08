@@ -18,6 +18,7 @@ def convert(img_dir):
             except IOError as err:
                 print(err)
                 print("Continuing after error")
+                os.remove(file)
 
 def downscale(img_dir):
     width = 96
