@@ -12,6 +12,7 @@ def download(keyword, count, img_dir):
         "limit": count,
         "print_urls": False,
         "output_directory": os.path.dirname(os.path.abspath(__file__)) + "/downloads/",
-        "chromedriver": os.path.dirname(os.path.abspath(__file__)) + "/chromedriver"
+        "chromedriver": os.path.dirname(os.path.abspath(__file__)) + "/chromedriver",
+        "silent_mode": False
     }
     paths = response.download(arguments)

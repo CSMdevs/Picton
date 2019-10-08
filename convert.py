@@ -1,40 +1,23 @@
-from PIL import Image
 import glob
 import os
+
+from PIL import Image
 from resizeimage import resizeimage
 
-
 def convert(img_dir):
-    print("")
-    print("Starting conversion to jpeg:")
-    
-    for file in glob.glob(img_dir + "/*.png"):
-        im = Image.open(file)
-        rgb_im = im.convert('RGB')
-        rgb_im.save(file.replace("png", "jpeg"), quality=70)
-        print("Converted " + file + " to jpeg")
-        os.remove(file)
-        
-    for file in glob.glob(img_dir + "/*.jpg"):
-        im = Image.open(file)
-        rgb_im = im.convert('RGB')
-        rgb_im.save(file.replace("jpg", "jpeg"), quality=70)
-        print("Converted " + file + " to jpeg")
-        os.remove(file)
-        
-    for file in glob.glob(img_dir + "/*.tiff"):
-        im = Image.open(file)
-        rgb_im = im.convert('RGB')
-        rgb_im.save(file.replace("tiff", "jpeg"), quality=70)
-        print("Converted " + file + " to jpeg")
-        os.remove(file)
-    
-    for file in glob.glob(img_dir + "/*.gif"):
-        im = Image.open(file)
-        rgb_im = im.convert('RGB')
-        rgb_im.save(file.replace("gif", "jpeg"), quality=70)
-        print("Converted " + file + " to jpeg")
-        os.remove(file)
+    print("Starting conversion to jpeg for: ", img_dir)
+    image_extentions = ["jpg", "png", "tiff", "gif", "webp"]
+    for extention in image_extentions:
+        for file in glob.glob(img_dir + "/*." + extention):
+            try:
+                im = Image.open(file)
+                rgb_im = im.convert('RGB')
+                rgb_im.save(file.replace(extention, "jpeg"), quality=70)
+                os.remove(file)
+                print("converted ", file, "to jpeg")
+            except IOError as err:
+                print(err)
+                print("Continuing after error")
 
 def downscale(img_dir):
     width = 96
