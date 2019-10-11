@@ -12,7 +12,7 @@ def prepare(file):
     return new_array.reshape(-1, IMG_SIZE, IMG_SIZE, 1)
 
 def predict(image_file):
-    json = True
+    json = False
     model = tf.keras.models.load_model("datasets/CNN.model")
     image = image_file
     prediction = model.predict([prepare(image)])
