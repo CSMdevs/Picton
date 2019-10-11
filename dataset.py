@@ -52,16 +52,16 @@ for features, label in training_data:
 X = np.array(X).reshape(-1, IMG_SIZE, IMG_SIZE, 1)
 
 # Creating the files containing all the information about your model
-pickle_out = open("X.pickle", "wb")
+pickle_out = open("datasets/X.pickle", "wb")
 pickle.dump(X, pickle_out)
 pickle_out.close()
 
-pickle_out = open("y.pickle", "wb")
+pickle_out = open("datasets/y.pickle", "wb")
 pickle.dump(y, pickle_out)
 pickle_out.close()
 
-pickle_in = open("X.pickle", "rb")
+pickle_in = open("datasets/X.pickle", "rb")
 X = pickle.load(pickle_in)
 
-pickle_in = open("y.pickle", "rb")
+pickle_in = open("datasets/y.pickle", "rb")
 y = pickle.load(pickle_in)

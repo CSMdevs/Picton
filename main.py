@@ -4,13 +4,11 @@ import convert
 import os
 import threading
 
-
-#keyword = raw_input("Enter keyword: ")
 keywords = ["seagull", "penguin", "owl", "pigeon", "kiwi bird", "mallard", "blackbird", "sparrow", "eagle", "mallard"]
 
 def img_actions(keyword):
     img_dir = os.path.dirname(os.path.abspath(__file__)) + "/downloads/" + keyword
-    count = 100
+    count = 250
     download.download(keyword, count, img_dir)
     rename.rename(keyword, img_dir)
     convert.convert(img_dir)

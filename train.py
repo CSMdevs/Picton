@@ -7,8 +7,8 @@ from keras.models import load_model
 import matplotlib.pyplot as plt
 
 # Opening the files about data
-X = pickle.load(open("X.pickle", "rb"))
-y = pickle.load(open("y.pickle", "rb"))
+X = pickle.load(open("datasets/X.pickle", "rb"))
+y = pickle.load(open("datasets/y.pickle", "rb"))
 
 # normalizing data (a pixel goes from 0 to 255)
 X = X/255.0
@@ -52,13 +52,13 @@ history = model.fit(X, y, batch_size=32, epochs=10, validation_split=0.1)
 
 # Saving the model
 model_json = model.to_json()
-with open("model.json", "w") as json_file :
+with open("datasets/model.json", "w") as json_file :
 	json_file.write(model_json)
 
-model.save_weights("model.h5")
+model.save_weights("datasets/model.h5")
 print("Saved model to disk")
 
-model.save('CNN.model')
+model.save('datasets/CNN.model')
 
 # Printing a graph showing the accuracy changes during the training phase
 print(history.history.keys())
