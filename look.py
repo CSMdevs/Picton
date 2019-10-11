@@ -9,15 +9,9 @@ def prepare(file):
 
 def predict(image_file):
     model = tf.keras.models.load_model("CNN.model")
-    image = image_file #your image path
+    image = image_file
     prediction = model.predict([prepare(image)])
     prediction = list(prediction[0])
-    print(prediction)
-    print(CATEGORIES[prediction.index(max(prediction))])
+    print(CATEGORIES[prediction.index(max(prediction))], str(prediction[prediction.index(max(prediction))]*100) + "%")
 
-predict("test.jpg")
-predict("test2.jpg")
-predict("test3.jpg")
-predict("test4.jpg")
-predict("test5.jpg")
-predict("test6.jpg")
+predict("IMG_2155.jpg")
