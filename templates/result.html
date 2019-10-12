@@ -96,9 +96,9 @@
                         <div class="header-content text-center">
                             <h3 class="header-title">Result</h3>
                             {% if image.src %}
-                            <img src="data:image/{{ image.type }};base64,{{ image.src }}" style="width: 10em"> {% endif %}
+                            <img src="data:image/{{ image.type }};base64,{{ image.src }}" style="width: 20em"> {% endif %}
                             <p class="text">We think it's a {{ result.prediction }} with a certainty of {{ result.certainty }}.</p>
-                            <p></p>
+                            <p><button onclick="window.location.href='/'">Try another photo</button></p>
                         </div>
                         <!-- header content -->
                     </div>
