@@ -28,5 +28,6 @@ def predict(image_file):
     logging.warning("(" + CATEGORIES[prediction.index(max(prediction))] + "," + str(prediction[prediction.index(max(prediction))]*100) + ")")
 
 
-for file in glob.glob("predict/*.jpg"):
-    predict(file)
+def webpredict():
+    for file in glob.glob("predict/*.jpg"):
+        predict(file)
