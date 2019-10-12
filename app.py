@@ -1,6 +1,7 @@
 import os
 import shutil
 from flask import Flask, request, render_template, url_for, redirect
+from waitress import serve
 import hashlib
 import look
 import logging
@@ -84,4 +85,4 @@ def handleFileUpload():
 
 
 if __name__ == '__main__':
-    app.run()     
+    serve(app, host="0.0.0.0", port=5000)     
