@@ -1,9 +1,9 @@
 Pillow==6.2.0
 google_images_download==2.8.0
-opencv-python
+opencv-python>=4,<5
 python-resize-image==1.1.19
-matplotlib
+numpy>=1.15,<1.17
+matplotlib==3.1.1
 tensorflow==1.14
-keras
-bs4
-requests
+keras==2.3.1
+Flask==1.1.1

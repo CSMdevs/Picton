@@ -12,22 +12,12 @@ def prepare(file):
     return new_array.reshape(-1, IMG_SIZE, IMG_SIZE, 1)
 
 def predict(image_file):
-    json = False
     model = tf.keras.models.load_model("datasets/CNN.model")
     image = image_file
     prediction = model.predict([prepare(image)])
     prediction = list(prediction[0])
-    if json:
-        print(CATEGORIES[prediction.index(max(prediction))], str(prediction[prediction.index(max(prediction))]*100) + "%")
-    
-    if not json:
-        print("\n" + "Predicting " + image_file[8:] + ":")
-        print("Type of bird: " + CATEGORIES[prediction.index(max(prediction))] + "\n" + "Probability: " + str(prediction[prediction.index(max(prediction))]*100) + "%")
-    
-    logging.basicConfig(filename='lastprediction.json', filemode='w', format='%(message)s')
-    logging.warning("(" + CATEGORIES[prediction.index(max(prediction))] + "," + str(prediction[prediction.index(max(prediction))]*100) + ")")
 
+    predicted_cat = CATEGORIES[prediction.index(max(prediction))]
+    predicted_crt = str(prediction[prediction.index(max(prediction))]*100) + "%"
 
-def webpredict():
-    for file in glob.glob("predict/*.jpg"):
-        predict(file)
+    return predicted_cat, predicted_crt

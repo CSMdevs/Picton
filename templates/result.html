@@ -94,20 +94,11 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-8 col-lg-10">
                         <div class="header-content text-center">
-                            <h3 class="header-title">Picton - Work in progress</h3>
-                            <p class="text">Upload your bird picture and the AI will tell you what bird it is!</p>
-                            <ul class="header-btn">
-                                <form action="/handleUpload" method="post" enctype="multipart/form-data">
-                                    <div class="wrap-custom-file">
-                                        <input type="file" name="photo" id="image1" accept=".jpg, .png, .gif, .jpeg" />
-                                        <label for="image1">
-                                          <span>Select Image</span>
-                                          <i class="fa fa-plus-circle"></i>
-                                        </label>
-                                    </div><br>
-                                    <input type="submit" value="Upload" />
-                                </form>
-                            </ul>
+                            <h3 class="header-title">Result</h3>
+                            {% if image.src %}
+                            <img src="data:image/{{ image.type }};base64,{{ image.src }}" style="width: 10em"> {% endif %}
+                            <p class="text">We think it's a {{ result.prediction }} with a certainty of {{ result.certainty }}.</p>
+                            <p></p>
                         </div>
                         <!-- header content -->
                     </div>
@@ -123,7 +114,6 @@
     </header>
 
     <!--====== HEADER PART ENDS ======-->
-
 
 
 
