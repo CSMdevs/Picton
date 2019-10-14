@@ -67,7 +67,7 @@ def handleFileUpload():
         if allowed_image(photo.filename) == False:
             return redirect(url_for('home'))
 
-        photo.filename = str(0) + '.' + photo.filename
+        #photo.filename = str(0) + '.' + photo.filename
 
         photo_location = os.path.join(predict_dir, photo.filename)
 
