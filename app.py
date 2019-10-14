@@ -13,7 +13,7 @@ import pathlib
 app = Flask(__name__)
 
 app.config["ALLOWED_IMAGE_EXTENSIONS"] = ["JPEG", "JPG", "PNG", "GIF"]
-predict_dir = os.path.dirname(os.path.abspath(__file__)) + "/predict/"
+predict_dir = os.path.dirname(os.path.abspath(__file__)) + "//predict/"
 
 def allowed_image(filename):
     if not "." in filename:
