@@ -94,10 +94,11 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-8 col-lg-10">
                         <div class="header-content text-center">
-                            <h3 class="header-title">Result</h3>
+                            <h3 class="header-title">Result</h3> <br>
                             {% if image.src %}
+                            
                             <img src="data:image/{{ image.type }};base64,{{ image.src }}" style="width: 20em"> {% endif %}
-                            <p class="text">We think it's a {{ result.prediction }} with a certainty of {{ result.certainty }}.</p>
+                            <br><p class="text">The AI thinks it's an {{ result.prediction }}. <!--with a certainty of {{ result.certainty }}.--></p>
                             <p><button onclick="window.location.href='/'">Try another photo</button></p>
                         </div>
                         <!-- header content -->
