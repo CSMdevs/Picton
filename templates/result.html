@@ -97,8 +97,8 @@
                             <h3 class="header-title">Result</h3> <br>
                             {% if image.src %}
                             
-                            <img src="data:image/{{ image.type }};base64,{{ image.src }}" style="width: 20em"> {% endif %}
-                            <br><p class="text">The AI thinks it's an {{ result.prediction }}. <!--with a certainty of {{ result.certainty }}.--></p>
+                            <img src="data:image/{{ image.type }};base64,{{ image.src }}" style="width: 20em"> {% endif %}<br>
+                            <br><p>The AI thinks it's a(n) <strong>{{ result.prediction }}</strong>. with a certainty of {{ result.certainty }}.</p><br>
                             <p><button onclick="window.location.href='/'">Try another photo</button></p>
                         </div>
                         <!-- header content -->
